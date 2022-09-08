@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { InfoCard, MainCard } from "./components"
-import { colors, neutralColors } from "./constants";
+import { colors } from "./constants";
+import { WorkIcon, PlayIcon, StudyIcon, ExerciseIcon, SelfCareIcon, SocialIcon } from './assets';
 import dataJson from './constants/data.json';
 
 export const TimeTrackingApp = () => {
@@ -25,7 +26,7 @@ export const TimeTrackingApp = () => {
           data={dataJson.find(data => data.title === 'Work')}
           title="Work"
           color={colors.softOrange}
-          icon="icon-work"
+          icon={WorkIcon}
         />
 
         <InfoCard
@@ -33,7 +34,7 @@ export const TimeTrackingApp = () => {
           data={dataJson.find(data => data.title === 'Play')}
           title="Play"
           color={colors.softBlue}
-          icon="icon-play"
+          icon={PlayIcon}
         />
 
         <InfoCard
@@ -41,7 +42,7 @@ export const TimeTrackingApp = () => {
           data={dataJson.find(data => data.title === 'Study')}
           title="Study"
           color={colors.lightRed}
-          icon="icon-study"
+          icon={StudyIcon}
         />
 
 
@@ -50,7 +51,7 @@ export const TimeTrackingApp = () => {
           data={dataJson.find(data => data.title === 'Exercise')}
           title="Exercise"
           color={colors.limeGreen}
-          icon="icon-Exercise"
+          icon={ExerciseIcon}
         />
 
         <InfoCard
@@ -58,26 +59,17 @@ export const TimeTrackingApp = () => {
           data={dataJson.find(data => data.title === 'Social')}
           title="Social"
           color={colors.violet}
-          icon="icon-social"
+          icon={SocialIcon}
         />
 
         <InfoCard
           time={timeFrames}
           data={dataJson.find(data => data.title === 'Self Care')}
           title="Self Care"
-          color={colors.softOrange}
-          icon="icon-self-care"
+          color={colors.softYellow}
+          icon={SelfCareIcon}
         />
-        {/*
 
-        <InfoCard title="Study" color={colors.lightRed} icon="icon-study" time={8} lastWeekTime={23} />
-
-        <InfoCard title="Exercise" color={colors.limeGreen} icon="icon-exercise" time={8} lastWeekTime={23} />
-
-        <InfoCard title="Social" color={colors.violet} icon="icon-social" time={8} lastWeekTime={23} />
-
-        <InfoCard title="Self Care" color={colors.softYellow} icon="icon-self-care" time={8} lastWeekTime={23} />
-          */}
       </section>
     </main>
   )

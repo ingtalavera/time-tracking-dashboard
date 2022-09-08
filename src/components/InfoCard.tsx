@@ -5,14 +5,13 @@ import { neutralColors } from '../constants';
 interface InfoCardProps {
   data: any;
   title: string;
-  icon: string;
+  icon: any;
   color: string;
   time: string;
 }
 
 export const InfoCard = ({ title, color, icon, data, time }: InfoCardProps) => {
 
-  const urlIcon = `/assets/${icon}.svg`;
   const [current, setCurrent] = useState(0)
   const [previous, setPrevious] = useState(0)
 
@@ -25,7 +24,7 @@ export const InfoCard = ({ title, color, icon, data, time }: InfoCardProps) => {
     <div className="rounded-xl w-full overflow-hidden relative" style={{ backgroundColor: color }}>
 
       <div className="h-10 overflow-hidden relative">
-        <img src={urlIcon} className="absolute -top-2 right-4" />
+        <img src={icon} className="absolute -top-2 right-4" />
       </div>
       <div className="py-8 px-6 md:py-6 rounded-t-xl bg-darkBlue hover:brightness-150 cursor-pointer group">
         <div className="flex justify-between items-center">
